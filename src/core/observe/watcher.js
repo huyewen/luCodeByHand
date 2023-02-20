@@ -1,5 +1,11 @@
 
 // 数据订阅者
-function Watcher() {
+function Watcher () {
 
 }
+
+Object.assign(Watcher.prototype, {
+
+})
+
+export default Watcher
