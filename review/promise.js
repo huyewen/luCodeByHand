@@ -1,5 +1,8 @@
 
 class RePromise {
+
+  status = 'pendding';
+
   constructor(executor) {
     executor(this.resolve, this.reject)
   }
