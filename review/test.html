@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./promise.js"></script>
+  </head>
+  <body>
+    <div>Promise 测试</div>
+    <script>
+      console.log(1);
+      let promise1 = new RPromise((resolve, reject) => {
+        console.log(2);
+        setTimeout(() => {
+          console.log('A', promise1.state);
+          resolve('这次一定');
+          console.log('B', promise1.state);
+          console.log(4);
+        });
+      });
+      promise1.then(
+        (result) => {
+          console.log('C', promise1.state);
+          console.log('fulfilled:', result);
+        },
+        (reason) => {
+          console.log('rejected:', reason);
+        }
+      );
+      console.log(3);
+    </script>
+  </body>
+</html>
